@@ -12,6 +12,9 @@ public class CourseServiceImpl implements CourseServiceInterface {
 
     //YOUR CODE STARTS HERE
     private CourseDao courseDao;
+    public CourseServiceImpl (CourseDao courseDao){
+        this.courseDao=courseDao;
+    }
 
     //YOUR CODE ENDS HERE
 
@@ -45,6 +48,8 @@ public class CourseServiceImpl implements CourseServiceInterface {
             courseDao.updateCourse(course);
             return course;
         }
+        course.setCourseName("IDs do not match, course not updated");
+        course.setCourseDesc("IDs do not match, course not updated");
         return null;
         //YOUR CODE ENDS HERE
     }

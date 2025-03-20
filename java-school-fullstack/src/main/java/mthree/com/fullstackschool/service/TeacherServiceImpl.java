@@ -1,5 +1,6 @@
 package mthree.com.fullstackschool.service;
 
+import mthree.com.fullstackschool.dao.CourseDao;
 import mthree.com.fullstackschool.dao.TeacherDao;
 import mthree.com.fullstackschool.model.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,9 @@ public class TeacherServiceImpl implements TeacherServiceInterface {
 
     //YOUR CODE STARTS HERE
     private TeacherDao teacherDao;
+    public TeacherServiceImpl (TeacherDao teacherDao){
+        this.teacherDao=teacherDao;
+    }
     //YOUR CODE ENDS HERE
 
     public List<Teacher> getAllTeachers() {
@@ -38,6 +42,8 @@ public class TeacherServiceImpl implements TeacherServiceInterface {
             teacherDao.updateTeacher(teacher);
             return teacher;
         }
+        teacher.setTeacherFName("IDs do not match, teacher not updated");
+        teacher.setTeacherLName("IDs do not match, teacher not updated");
         return null;
         //YOUR CODE ENDS HERE
     }

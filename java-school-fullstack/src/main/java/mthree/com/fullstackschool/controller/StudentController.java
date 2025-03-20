@@ -53,7 +53,7 @@ public class StudentController {
     public void deleteStudent(@PathVariable int id) {
         //YOUR CODE STARTS HERE
 
-        studentServiceImpl.deleteStudent(id)
+        studentServiceImpl.deleteStudentById(id);
 
         //YOUR CODE ENDS HERE
     }

@@ -36,7 +36,7 @@ public class CourseController {
     public Course addCourse(@RequestBody Course course) {
         //YOUR CODE STARTS HERE
 
-        return courseService.updateCourseData(id, course);
+        return courseService.addNewCourse(course);
 
         //YOUR CODE ENDS HERE
     }
@@ -45,7 +45,7 @@ public class CourseController {
     public Course updateCourse(@PathVariable int id, @RequestBody Course course) {
         //YOUR CODE STARTS HERE
 
-        return courseService.addNewCourse(course);
+        return courseService.updateCourseData(id, course);
 
         //YOUR CODE ENDS HERE
     }
@@ -53,7 +53,7 @@ public class CourseController {
     @DeleteMapping("/{id}")
     public void deleteCourse(@PathVariable int id) {
         //YOUR CODE STARTS HERE
-        courseService.deleteCourseById(id)
+        courseService.deleteCourseById(id);
 
         //YOUR CODE ENDS HERE
     }

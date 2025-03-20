@@ -1,6 +1,7 @@
 package mthree.com.fullstackschool.service;
 
 import mthree.com.fullstackschool.dao.CourseDao;
+import mthree.com.fullstackschool.dao.CourseDaoImpl;
 import mthree.com.fullstackschool.model.Course;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

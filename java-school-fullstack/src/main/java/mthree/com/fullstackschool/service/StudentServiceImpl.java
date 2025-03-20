@@ -1,5 +1,6 @@
 package mthree.com.fullstackschool.service;
 
+import mthree.com.fullstackschool.dao.CourseDao;
 import mthree.com.fullstackschool.dao.StudentDao;
 import mthree.com.fullstackschool.model.Course;
 import mthree.com.fullstackschool.model.Student;
@@ -13,6 +14,9 @@ public class StudentServiceImpl implements StudentServiceInterface {
 
     //YOUR CODE STARTS HERE
     private StudentDao studentDao;
+    public StudentServiceImpl (StudentDao studentDao) {
+        this.studentDao=studentDao;
+    }
     //YOUR CODE ENDS HERE
 
     public List<Student> getAllStudents() {
@@ -41,7 +45,9 @@ public class StudentServiceImpl implements StudentServiceInterface {
             studentDao.updateStudent(student);
             return student;
         }
-        return null;
+        student.setStudentFirstName("IDs do not match, student not updated");
+        student.setStudentLastName("IDs do not match, student not updated");
+        return student;
 
         //YOUR CODE ENDS HERE
     }
